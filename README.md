@@ -28,6 +28,8 @@ source("splitSpectral.R")
 test_adj = matrix(0, nrow=100, ncol=100)
 test_adj[1:50, 1:50] = 1
 test_adj[51:100, 51:100] = 1
+
+## the true community labels
 true_clusters = c(rep(1, 50), rep(2, 50))
 
 ## now we perform cross clustering with sample splitting
@@ -38,5 +40,5 @@ clusters = CrossClust.vFold(Adj=test_adj, fold=fold, K=K,
     )
 
 ## check the accuracy
-print(paste0("Accuracy = ", Accuracy(clusters, true_clusters, K=2)))
+print(paste0("Accuracy = ", Accuracy(clusters, true_clusters, K=K)))
 ```
