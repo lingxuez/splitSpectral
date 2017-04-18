@@ -42,3 +42,5 @@ clusters = CrossClust.vFold(Adj=test_adj, fold=fold, K=K,
 ## check the accuracy
 print(paste0("Accuracy = ", Accuracy(clusters, true_clusters, K=K)))
 ```
+Please note that the greedy `Merge` implementation in this R script is only for the case
+where within-community connectivities are larger than between-community connectivities. 
