@@ -2,7 +2,7 @@
 ## Spectral Clustering with Sample Splitting:
 ## An example on the political blog data.
 ##
-## Copyright Lingxue Zhu (lzhu1@cmu.edu)
+## Copyright Lingxue Zhu (lzhu@cmu.edu)
 ## All Rights Reserved.
 ##
 ## Reference:
@@ -67,14 +67,3 @@ cross.self.clust.est = CrossClust(Adj=BlogAdj,
 cross.self.accur = Accuracy(cross.self.clust.est, PolblogsNode[, "truelabel"], K=2)
 print(paste("Sphere self-cross clustering: accuracy =", cross.self.accur))
 
-
-test_adj = matrix(0, nrow=100, ncol=100)
-test_adj[1:50, 1:50] = 1
-test_adj[51:100, 51:100] = 1
-clusters = CrossClust.vFold(Adj=test_adj, ## the adjacency matrix of your graph
-                            fold=2, ## number of folds to split samples 
-                            K=2, ## number of communities
-                            isSphere=TRUE ## set to TRUE for degree-corrected block models
-) 
-
-print(paste0("Accuracy = ", Accuracy(clusters, true_clusters, K=2)))

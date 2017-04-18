@@ -1,7 +1,7 @@
 #################################################
 ## Spectral Clustering with Sample Splitting
 ##
-## Copyright Lingxue Zhu (lzhu1@cmu.edu)
+## Copyright Lingxue Zhu (lzhu@cmu.edu)
 ## All Rights Reserved.
 ## 
 ## Reference:
